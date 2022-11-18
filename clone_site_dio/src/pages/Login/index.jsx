@@ -1,5 +1,6 @@
 import Button from "../../components/Button"
 import Header from "../../components/Header"
+import Input from "../../components/Input"
 import './styles.css'
 
 const Login = () =>{
@@ -14,16 +15,16 @@ const Login = () =>{
                         </span>
                         o seu futuro global agora!
                     </div>
-                    <div className="TitleContent">
+                    <p className="TextContent">
                         Domine as tecnologias utilizadas pelas empresas mais
                         inovadoras do mundo e encare seu novo desafio
                         profissional, evoluindo com uma comunidade com os
                         melhores experts!
-                    </div>
+                    </p>
                     <Button title={"Começar"} onClick={()=>null}></Button>
                 </div>
                 <div>
-                    <img src="#" alt="Imagem Principal" />
+                    <Input placeholder="email"></Input>
                 </div>
             </div>
         </>

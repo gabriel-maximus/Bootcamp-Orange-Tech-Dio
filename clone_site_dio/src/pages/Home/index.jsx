@@ -14,7 +14,7 @@ const Home = () =>{
                         </span>
                         o seu futuro global agora!
                     </div>
-                    <div className="TitleContent">
+                    <div className="TextContent">
                         Domine as tecnologias utilizadas pelas empresas mais
                         inovadoras do mundo e encare seu novo desafio
                         profissional, evoluindo com uma comunidade com os
