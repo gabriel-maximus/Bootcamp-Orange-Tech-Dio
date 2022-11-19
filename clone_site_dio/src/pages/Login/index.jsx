@@ -3,28 +3,33 @@ import Header from "../../components/Header"
 import Input from "../../components/Input"
 import './styles.css'
 
+import {MdEmail, MdLock} from 'react-icons/md'
+
 const Login = () =>{
     return(
         <>
             <Header></Header>
             <div className="Container">
-                <div>
+                <div className="Column">
                     <div className="Title">
-                        <span className="TitleHighLight">
-                            Implemente<br></br>
-                        </span>
-                        o seu futuro global agora!
+                        A plataforma para você aprender com experts, dominar as principais tecnologias,
+                        e entrar mais rápido nas empresas mais desejadas.
                     </div>
-                    <p className="TextContent">
-                        Domine as tecnologias utilizadas pelas empresas mais
-                        inovadoras do mundo e encare seu novo desafio
-                        profissional, evoluindo com uma comunidade com os
-                        melhores experts!
-                    </p>
-                    <Button title={"Começar"} onClick={()=>null}></Button>
                 </div>
-                <div>
-                    <Input placeholder="email"></Input>
+                <div className="Column">
+                    <div className="Wrapper">
+                        <p className="TitleLogin">Faça seu cadastro!</p>
+                        <p className="SubtitleLogin">Faça seu login e make the change.</p>
+                        <form>
+                            <Input placeholder="Email" type="email" leftIcon={<MdEmail></MdEmail>}></Input>
+                            <Input placeholder="Senha" type="password" leftIcon={<MdLock></MdLock>}></Input>
+                            <Button title={"Entrar"}></Button>
+                        </form>
+                        <div className="Row">
+                            <p className="EsqueciText">Esqueci minha senha</p>
+                            <p className="CriarText">Criar conta</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

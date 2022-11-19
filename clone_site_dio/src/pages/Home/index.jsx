@@ -1,7 +1,6 @@
 import Button from "../../components/Button"
 import Header from "../../components/Header"
 import './styles.css'
-import Logo from "../../assets/logodio.png"
 import Principal from "../../assets/imagemprincipal.png"
 
 const Home = () =>{
