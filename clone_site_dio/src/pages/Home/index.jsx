@@ -1,6 +1,8 @@
 import Button from "../../components/Button"
 import Header from "../../components/Header"
 import './styles.css'
+import Logo from "../../assets/logodio.png"
+import Principal from "../../assets/imagemprincipal.png"
 
 const Home = () =>{
     return(
@@ -23,7 +25,7 @@ const Home = () =>{
                     <Button title={"Começar"} onClick={()=>null}></Button>
                 </div>
                 <div>
-                    <img src="#" alt="Imagem Principal" />
+                    <img src={Principal} alt="Imagem Principal" />
                 </div>
             </div>
         </>
