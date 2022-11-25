@@ -7,9 +7,6 @@ import { useForm } from "react-hook-form";
 import {MdEmail, MdLock} from 'react-icons/md'
 
 const Login = () =>{
-    const { control, handleSubmit,  formState: { errors, isValid } } = useForm();
-    const onSubmit = data => console.log(data);
-
     return(
         <>
             <Header></Header>
