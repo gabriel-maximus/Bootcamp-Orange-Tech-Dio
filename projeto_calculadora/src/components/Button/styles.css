@@ -5,6 +5,10 @@
     color: #fff;
     font-size: 24px;
     font-weight: 700;
-    
+    flex: 1;
+}
 
+.ButtonContainer:hover{
+    opacity: 0.6;
+    cursor: pointer;
 }
