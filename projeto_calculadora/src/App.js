@@ -4,24 +4,63 @@ import Button from './components/Button';
 import { useState } from 'react';
 
 function App() {
-  const [currentNumber, setCurrentNumber] = useState('0')
-  const [firstNumber, setFirstNumber] = useState('0')
-  
-  const addNumber = (num) =>{
-    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}` )
+  const [currentNumber, setCurrentNumber] = useState('0');
+  const [firstNumber, setFirstNumber] = useState('0');
+  const [operation, setOperation] = useState('');
+
+  const clear = () => {
+    setCurrentNumber('0')
+    setFirstNumber('0')
+    setOperation('')
+  };
+
+  const addNumber = (num) => {
+    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
   }
-  const clear = () =>{
-    setCurrentNumber('0');
-    setFirstNumber('0');
-  }
-  const somarNumeros = () =>{
-    if (firstNumber === '0') {
-      setFirstNumber(String(currentNumber));
-      setCurrentNumber('0');
+
+  const somarNumeros = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('+')
     }else {
-      const soma = Number(firstNumber) + Number(currentNumber);
-      setCurrentNumber = String(soma);
+      const sum = Number(firstNumber) + Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
     }
+
+  }
+
+  const diminuirNumeros = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('-')
+    }else {
+      const sum = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+
+  }
+
+  const resultado = () => {
+
+    if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
+        switch(operation){
+          case '+':
+            somarNumeros();
+            break;
+          case '-':
+            diminuirNumeros();
+            break;
+          default: 
+            break;
+        }
+    }
+
   }
   
 
@@ -33,7 +72,7 @@ function App() {
           <Button label='AC' onClick={()=> clear()}/>
           <Button label='/' onClick={()=> addNumber('/')}/>
           <Button label='X' onClick={()=> addNumber('X')}/>
-          <Button label='CALC'/>
+          <Button label='.'/>
         </div>
         <div className='Row'>
           <Button label='7' onClick={()=> addNumber('7')}/>
@@ -45,13 +84,13 @@ function App() {
           <Button label='4' onClick={()=> addNumber('4')}/>
           <Button label='5' onClick={()=> addNumber('5')}/>
           <Button label='6' onClick={()=> addNumber('6')}/>
-          <Button label='-' onClick={()=> addNumber('-')}/>
+          <Button label='-' onClick={diminuirNumeros}/>
         </div>
         <div className='Row'>
           <Button label='1' onClick={()=> addNumber('1')}/>
           <Button label='2' onClick={()=> addNumber('2')}/>
           <Button label='3' onClick={()=> addNumber('3')}/>
-          <Button label='=' onClick={()=> addNumber('=')}/>
+          <Button label='=' onClick={resultado}/>
         </div>
       </div>
     </div>
