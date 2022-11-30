@@ -46,6 +46,33 @@ function App() {
 
   }
 
+  const multiplicarNumeros = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('*')
+    }else {
+      const sum = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+
+  }
+  const dividirNumeros = () => {
+
+    if(firstNumber === '0'){
+        setFirstNumber(String(currentNumber));
+        setCurrentNumber('0')
+        setOperation('/')
+    }else {
+      const sum = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+
+  }
+
   const resultado = () => {
 
     if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
@@ -55,6 +82,12 @@ function App() {
             break;
           case '-':
             diminuirNumeros();
+            break;
+          case '*':
+            multiplicarNumeros();
+            break;
+          case '/':
+            dividirNumeros();
             break;
           default: 
             break;
@@ -70,8 +103,8 @@ function App() {
         <Input value={currentNumber}/>
         <div className='Row'>
           <Button label='AC' onClick={()=> clear()}/>
-          <Button label='/' onClick={()=> addNumber('/')}/>
-          <Button label='X' onClick={()=> addNumber('X')}/>
+          <Button label='/' onClick={dividirNumeros}/>
+          <Button label='X' onClick={multiplicarNumeros}/>
           <Button label='.'/>
         </div>
         <div className='Row'>
