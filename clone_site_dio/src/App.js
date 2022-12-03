@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
+import Cadastro from './pages/Cadastro';
 
 function App() {
   return (
@@ -16,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Cadastro></Cadastro>}></Route>
       </Routes>
     </Router>
   );
