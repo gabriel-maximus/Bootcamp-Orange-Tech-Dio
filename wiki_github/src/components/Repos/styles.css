@@ -1,0 +1,22 @@
+.Container{
+    width: 80%;
+}
+
+.Title{
+    font-size: 32px;
+    color: #fff;
+}
+
+.Text{
+    font-size: 16px;
+    color: #FAFAFA60;
+}
+
+.Remover{
+    color: #FF0000;
+    margin: 20px 0;
+}
+
+.Linha{
+    margin: 20px 0;
+}
