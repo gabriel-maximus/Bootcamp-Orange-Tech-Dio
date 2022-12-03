@@ -1,0 +1,14 @@
+.ClickButton{
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    height: 62px;
+    width: 80%;
+    margin: 20px;
+    color: black;
+}
+
+.ClickButton:hover{
+    cursor: pointer;
+    opacity: 60%;
+}
