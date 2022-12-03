@@ -11,7 +11,7 @@ function App() {
   const [currentRepo, setCurrentRepo] = useState('');
 
   const searchRepo = async () =>{
-    const {data} = api.get(`repos/${currentRepo}`)
+    const {data} = await api.get(`repos/${currentRepo}`)
     if(data.id){
       setRepos(prev => [...prev, data])
     }
@@ -20,9 +20,9 @@ function App() {
     <div className="App">
       <img width={72} height={72} src={logo} alt='Logo Github'/>
       <h1>GitHub Wiki</h1>
-      <Input />
+      <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)}/>
       <Button onClick={searchRepo} />
-      <Repos />
+      {repos.map(repo => <Repos repo={repo} />)}
     </div>
   );
 }
