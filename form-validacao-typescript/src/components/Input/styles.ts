@@ -19,4 +19,8 @@ export const InputContainer = styled.div`
         border: 0;
         outline: none;
     }
+
+    & p {
+        color: red;
+    }
 `
